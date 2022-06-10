@@ -1,9 +1,10 @@
-from django.contrib.auth.models import User
-from rest_framework import viewsets
+from rest_framework.generics import ListAPIView
 
-from api.serializers import UserSerializer
+from api.serializers import RecruitSerializer
+from recruitment.models import Recruitment
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class APIListView(ListAPIView):
+    queryset = Recruitment.objects.all()
+    serializer_class = RecruitSerializer
+

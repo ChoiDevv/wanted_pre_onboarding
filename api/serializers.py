@@ -1,8 +1,10 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+from recruitment.models import Recruitment
+
+
+class RecruitSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
+        model = Recruitment
+        fields = '__all__'
+
