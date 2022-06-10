@@ -1,6 +1,6 @@
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView
 
-from api.serializers import RecruitListSerializer, RecruitCreateSerializer
+from api.serializers import RecruitListSerializer
 from recruitment.models import Recruitments
 
 
@@ -11,5 +11,15 @@ class APIListView(ListAPIView):
 
 class APICreateView(CreateAPIView):
     queryset = Recruitments.objects.all()
-    serializer_class = RecruitCreateSerializer
+    serializer_class = RecruitListSerializer
+
+
+class APIUpdateView(RetrieveUpdateAPIView):
+    queryset = Recruitments.objects.all()
+    serializer_class = RecruitListSerializer
+
+
+class APIDeleteView(RetrieveDestroyAPIView):
+    queryset = Recruitments.objects.all()
+    serializer_class = RecruitListSerializer
 

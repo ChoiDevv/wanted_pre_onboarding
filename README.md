@@ -20,9 +20,11 @@ Start - 2022.06.10
 <hr>
 
 ## ✔ API 아키텍처
-- APIListView : 모든 리스트를 보여줍니다.
+- APIListView : 모든 공고 리스트
 - APICreateView : 채용 공고 등록
+- APIUpdateView : 채용 공고 수정
+- APIDeleteView : 채용 공고 삭제
 
 <hr>
 
--- last update: 2022.06.10
+-- last update: 2022.06.11
