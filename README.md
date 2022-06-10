@@ -21,6 +21,7 @@ Start - 2022.06.10
 
 ## ✔ API 아키텍처
 - APIListView : 모든 리스트를 보여줍니다.
+- APICreateView : 채용 공고 등록
 
 <hr>
 

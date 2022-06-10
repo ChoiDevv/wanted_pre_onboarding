@@ -1,10 +1,15 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView
 
-from api.serializers import RecruitSerializer
-from recruitment.models import Recruitment
+from api.serializers import RecruitListSerializer, RecruitCreateSerializer
+from recruitment.models import Recruitments
 
 
 class APIListView(ListAPIView):
-    queryset = Recruitment.objects.all()
-    serializer_class = RecruitSerializer
+    queryset = Recruitments.objects.all()
+    serializer_class = RecruitListSerializer
+
+
+class APICreateView(CreateAPIView):
+    queryset = Recruitments.objects.all()
+    serializer_class = RecruitCreateSerializer
 

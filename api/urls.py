@@ -6,4 +6,5 @@ from api import views
 api_name = 'api'
 urlpatterns = [
     path('list/', views.APIListView.as_view(), name="list"),
+    path('create/', views.APICreateView.as_view(), name="create"),
 ]
