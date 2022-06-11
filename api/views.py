@@ -2,25 +2,23 @@ from rest_framework import filters
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, \
     RetrieveAPIView
 
-from api.serializers import RecruitListSerializer, RecruitPersonalListSerializer
-from recruitment.models import Recruitments
+from api.serializers import CompanyRecruitSerializer, RecruitPersonalListSerializer
+from recruitment.models import Recruit, Company
 
 
-class APIListView(ListAPIView):
-    queryset = Recruitments.objects.all()
-    serializer_class = RecruitListSerializer
-    filter_backends = [filters.SearchFilter]
-    search_fields = ['company', 'recruit_position', 'skill']
+class CompanyCreatedRecruitView(ListAPIView):
+    queryset = Recruit.objects.all()
+    serializer_class = CompanyRecruitSerializer
+    # filter_backends = [filters.SearchFilter]
+    # search_fields = ['company', 'position', 'skill']
 
 
-class APICreateView(CreateAPIView):
-    queryset = Recruitments.objects.all()
-    serializer_class = RecruitListSerializer
+class CompanyCreateAPIView(CreateAPIView):
+    queryset = Recruit.objects.all()
+    serializer_class = CompanyRecruitSerializer
 
 
-class APIPersonalView(RetrieveAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView):
-    queryset = Recruitments.objects.all()
-    serializer_class = RecruitPersonalListSerializer
-
-
+class DifferentCreatedRecruitView(RetrieveAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView):
+    queryset = Recruit.objects.all()
+    serializer_class = CompanyRecruitSerializer
 

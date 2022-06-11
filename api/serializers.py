@@ -1,16 +1,15 @@
 from rest_framework import serializers
 
-from recruitment.models import Recruitments
+from recruitment.models import Recruit
 
 
-class RecruitListSerializer(serializers.ModelSerializer):
+class CompanyRecruitSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Recruitments
-        exclude = ['recruit_content']
+        model = Recruit
+        fields = '__all__'
 
 
 class RecruitPersonalListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Recruitments
+        model = Recruit
         fields = '__all__'
-

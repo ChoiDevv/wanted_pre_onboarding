@@ -20,9 +20,9 @@ Start - 2022.06.10
 <hr>
 
 ## ✔ API 아키텍처
-- APIListView : 채용 공고 목록 / 채용 공고 검색 기능
-- APICreateView : 채용 공고 등록 기능
-- APIPersonalView : 채용 공고 리스트 조회, 수정, 삭제 기능
+- CompanyCreatedRecruitView : 회사가 올린 공고 조회 기능
+- CompanyCreateAPIView : 회사가 올리는 채용 공고 추가 기능
+- DifferentCreatedRecruitView : 회사가 올린 채용 공고 수정, 삭제 기능(id 값을 pk로 받음)
 
 <hr>
 
@@ -35,5 +35,7 @@ Start - 2022.06.10
 2. django-filter 패키지를 설치해서 APIListView 항목에 적용.
 3. APIPersonalView의 Update 부분은 PATCH 메소드를 사용(부분적인 수정도 가능하기 때문).
 4. 현재 채용 상세 페이지에서 회사가 올린 다른 채용 공고 필드를 못받았음.
+5. 모델 설계부터 잘못되었음을 인지하고 수정.
+6. url 및 뷰 이름 수정 - 조금 더 인식하기 쉽게 네이밍 변경 / serializer 안에 모델 두 개를 어떻게 넣어야할지 고민해야함.
 
 -- last update: 2022.06.11
