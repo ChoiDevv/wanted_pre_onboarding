@@ -9,8 +9,8 @@ from recruitment.models import Recruit, Company
 class CompanyCreatedRecruitView(ListAPIView):
     queryset = Recruit.objects.all()
     serializer_class = CompanyRecruitSerializer
-    # filter_backends = [filters.SearchFilter]
-    # search_fields = ['company', 'position', 'skill']
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['position', 'content', 'skill', 'recruit_compensation']
 
 
 class CompanyCreateAPIView(CreateAPIView):
