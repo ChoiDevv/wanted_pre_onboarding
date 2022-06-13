@@ -1,9 +1,11 @@
 from rest_framework import filters
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, \
     RetrieveAPIView
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from api.serializers import CompanyRecruitSerializer
-from recruitment.models import Recruit, Company
+from api.serializers import CompanyRecruitSerializer, TestSerializer
+from recruitment.models import Recruit, Company, Test
 
 
 class CompanyCreatedRecruitView(ListAPIView):
@@ -21,4 +23,3 @@ class CompanyCreateAPIView(CreateAPIView):
 class DifferentCreatedRecruitView(RetrieveAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView):
     queryset = Recruit.objects.all()
     serializer_class = CompanyRecruitSerializer
-
