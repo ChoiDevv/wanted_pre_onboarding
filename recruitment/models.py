@@ -12,4 +12,3 @@ class Recruit(models.Model):
     content = models.TextField(blank=False)
     skill = models.CharField(max_length=10, blank=False)
     recruit_compensation = models.IntegerField()
-

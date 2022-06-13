@@ -38,4 +38,8 @@ Start - 2022.06.10
 5. 모델 설계부터 잘못되었음을 인지하고 수정.
 6. url 및 뷰 이름 수정 - 조금 더 인식하기 쉽게 네이밍 변경 / serializer 안에 모델 두 개를 어떻게 넣어야할지 고민해야함.
 
--- last update: 2022.06.11
+#### 2022.06.13
+1. Nested Serializer 방식을 통해 Recruit, Company 모델에 각 serializer에 담아 전송할 계획.
+
+
+-- last update: 2022.06.13

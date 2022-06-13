@@ -2,7 +2,7 @@ from rest_framework import filters
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, \
     RetrieveAPIView
 
-from api.serializers import CompanyRecruitSerializer, RecruitPersonalListSerializer
+from api.serializers import CompanyRecruitSerializer
 from recruitment.models import Recruit, Company
 
 
