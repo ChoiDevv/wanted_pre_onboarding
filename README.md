@@ -20,9 +20,10 @@ Start - 2022.06.10
 <hr>
 
 ## ✔ API 아키텍처
-- CompanyCreatedRecruitView : 회사가 올린 공고 조회 기능
-- CompanyCreateAPIView : 회사가 올리는 채용 공고 추가 기능
-- DifferentCreatedRecruitView : 회사가 올린 채용 공고 수정, 삭제 기능(id 값을 pk로 받음)
+- CompanyListView : 회사가 올린 공고 조회 기능
+- RecruitCreateView : 회사가 올리는 채용 공고 추가 기능
+- RecruitDetailView : 회사가 올린 채용 공고 수정, 삭제 기능(id 값을 pk로 받음)
+- CompanyCreateView : 회사 등록 기능
 
 <hr>
 
@@ -43,4 +44,9 @@ Start - 2022.06.10
 2. 원래대로라면 회사가 채용공고를 등록할 때 자신들이 가입한 정보로 등록하기에 그 정보까지 보여지는 것을 뜻하는 것 같다고 생각.
 3. Nested Serializer를 활용해서 구성해보려고 했으나 채용공고 id 값만으로는 띄울 수가 없었음. 내 생각엔 모델 부분을 수정해야할 것 같은데 이번에 부족하다는 걸 느낌.
 
--- last update: 2022.06.13
+#### 2022.06.14
+1. 모델 부분이 틀렸음을 인지하고 Company 테이블을 참조하도록 Recruit 테이블에서 외래키로 설정했음.
+2. 지속해서 NOT NULL constraint failed 에러가 발생해서 고민해본 결과, 로그인을 했다고 착각한 문제였다.
+3. 채용 공고에서 회사 정보를 가져올 수 있도록 조정하기 위해 시리얼라이저 및 뷰 수정.
+
+-- last update: 2022.06.14
