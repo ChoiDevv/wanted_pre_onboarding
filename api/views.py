@@ -1,5 +1,5 @@
 from rest_framework import filters
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, \
+from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView, \
     RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
